@@ -105,6 +105,9 @@
         </div>
     </div>
 
+    <!-- Adiciona o elemento de áudio -->
+    <audio id="happy-birthday" src="images/musica.mp3"></audio>
+
     <script>
         let slideIndex = 0;
         showSlides();
@@ -123,6 +126,7 @@
         // Contagem regressiva
         const countdownElement = document.getElementById('countdown');
         const countdownMessageElement = document.getElementById('countdown-message');
+        const audioElement = document.getElementById('happy-birthday');
         const targetDate = new Date('2024-08-02T00:00:00').getTime();
 
         function updateCountdown() {
@@ -132,6 +136,7 @@
             if (distance < 0) {
                 countdownElement.style.display = "none"; // Esconde a contagem regressiva
                 countdownMessageElement.innerHTML = "Feliz Aniversário meu amor!!";
+                audioElement.play(); // Toca a música
                 return;
             }
 
