@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz aniversário gatinha</title>
+    <style>
+        body {
+            background-color: #d3d3d3; /* Fundo cinza claro */
+            color: #000;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+        }
+        .slideshow-container {
+            position: relative;
+            max-width: 100%;
+            margin: auto;
+        }
+        .mySlides {
+            display: none;
+        }
+        .mySlides img {
+            width: 100%;
+            max-height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .text {
+            margin: 20px 0;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+        .countdown {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        @media (max-width: 600px) {
+            .text {
+                font-size: 16px;
+            }
+            .countdown {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div id="countdown" class="countdown"></div>
+        
+        <div class="slideshow-container">
+            <div class="mySlides">
+                <img src="images/foto1.jpg" alt="Foto 1">
+            </div>
+            <div class="mySlides">
+                <img src="images/foto2.jpg" alt="Foto 2">
+            </div>
+            <div class="mySlides">
+                <img src="images/foto3.jpg" alt="Foto 3">
+            </div>
+            <div class="mySlides">
+                <img src="images/foto4.jpg" alt="Foto 4">
+            </div>
+            <div class="mySlides">
+                <img src="images/foto5.jpg" alt="Foto 5">
+            </div>
+        </div>
+
+        <div class="text">
+            <p>Oi minha gatinhaaa!!</p>
+            <p>♡♡♡♡♡♡♡</p>
+            <p>Hoje é o dia mais especial de todos em que a pessoa mais incrível de todas veio ao mundo. Desde que você apareceu, minha vida ganhou cor e alegria. Seu sorriso ilumina meus dias e seu amor me completa e me faz ser o homem mais feliz do mundo.</p>
+            <p>♡♡♡♡♡♡♡</p>
+            <p>Cada momento com você é um presente. Sua forma de cuidar de mim e me apoiar é uma prova do nosso amor imenso. Sou grato por cada instante juntos e por todas as nossas memórias.</p>
+            <p>♡♡♡♡♡♡♡</p>
+            <p>Quero que saiba o quanto sou apaixonado por você e o quanto te amo. Você é minha luz, minha inspiração e a razão do meu sorriso diário. Desejo que seu aniversário seja tão maravilhoso quanto você, cheio de alegria, carinho e amor.</p>
+            <p>♡♡♡♡♡♡♡</p>
+            <p>Feliz aniversário, minha princesa! Que todos os seus sonhos se realizem e que nossa jornada juntos seja sempre feliz. Amo você mais do que palavras podem expressar.</p>
+            <p>Com todo meu amor,<br>Leandro</p>
+            <p>♡♡♡♡♡♡♡</p>
+        </div>
+    </div>
+
+    <script>
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let slides = document.getElementsByClassName("mySlides");
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}    
+            slides[slideIndex-1].style.display = "block";  
+            setTimeout(showSlides, 3000); // Muda a imagem a cada 3 segundos
+        }
+
+        // Contagem regressiva
+        const countdownElement = document.getElementById('countdown');
+        const targetDate = new Date('2024-08-02T00:00:00').getTime();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+
+            if (distance < 0) {
+                countdownElement.innerHTML = "Feliz aniversário, amor!";
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            countdownElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+        }
+
+        setInterval(updateCountdown, 1000);
+    </script>
+
+</body>
+</html>
