@@ -30,9 +30,6 @@
             position: relative;
             max-width: 100%;
             margin: 20px auto;
-            border: 5px solid #fff; /* Borda ao redor do slideshow */
-            border-radius: 15px; /* Bordas arredondadas */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
         }
         .mySlides {
             display: none;
@@ -52,6 +49,13 @@
             font-size: 24px;
             margin: 20px 0;
         }
+        .countdown-message {
+            font-size: 36px; /* Aumenta o tamanho da fonte */
+            font-family: 'Comic Sans MS', cursive, sans-serif; /* Fonte mais bonita */
+            color: #d9534f; /* Cor vermelha */
+            margin-top: 20px;
+            font-weight: bold; /* Deixa a fonte em negrito */
+        }
         .red-heart {
             color: red;
         }
@@ -59,6 +63,9 @@
 </head>
 <body>
     <div class="container">
+        <div id="countdown" class="countdown"></div>
+        <div id="countdown-message" class="countdown-message"></div>
+
         <div class="slideshow-container">
             <div class="mySlides">
                 <img src="images/foto1.jpg" alt="Foto 1">
@@ -82,8 +89,6 @@
                 <img src="images/foto7.jpg" alt="Foto 7">
             </div>
         </div>
-
-        <div id="countdown" class="countdown"></div>
 
         <div class="text">
             <p>Oi minha gatinhaaa!!</p>
@@ -117,6 +122,7 @@
 
         // Contagem regressiva
         const countdownElement = document.getElementById('countdown');
+        const countdownMessageElement = document.getElementById('countdown-message');
         const targetDate = new Date('2024-08-02T00:00:00').getTime();
 
         function updateCountdown() {
@@ -124,7 +130,8 @@
             const distance = targetDate - now;
 
             if (distance < 0) {
-                countdownElement.innerHTML = "Feliz aniversário, amor!";
+                countdownElement.style.display = "none"; // Esconde a contagem regressiva
+                countdownMessageElement.innerHTML = "Feliz Aniversário meu amor!!";
                 return;
             }
 
