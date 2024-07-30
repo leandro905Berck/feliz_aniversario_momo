@@ -6,17 +6,17 @@
     <title>Feliz aniversário gatinha</title>
     <style>
         body {
-            background-color: #d3d3d3; /* Fundo cinza claro */
+            background-color: #a0a0a0; /* Fundo cinza claro */
             color: #000;
             font-family: Arial, sans-serif;
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: flex-start;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh;
             margin: 0;
-            text-align: center;
             padding: 20px;
+            text-align: center;
         }
         .container {
             max-width: 800px;
@@ -29,15 +29,18 @@
         .slideshow-container {
             position: relative;
             max-width: 100%;
-            margin: auto;
+            margin: 20px auto;
+            border: 5px solid #fff; /* Borda ao redor do slideshow */
+            border-radius: 15px; /* Bordas arredondadas */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
         }
         .mySlides {
             display: none;
         }
         .mySlides img {
             width: 100%;
-            max-height: 300px;
-            object-fit: cover;
+            max-height: 500px; /* Aumenta a altura máxima das imagens */
+            object-fit: contain;
             border-radius: 10px;
         }
         .text {
@@ -47,23 +50,15 @@
         }
         .countdown {
             font-size: 24px;
-            margin-bottom: 20px;
+            margin: 20px 0;
         }
-        @media (max-width: 600px) {
-            .text {
-                font-size: 16px;
-            }
-            .countdown {
-                font-size: 20px;
-            }
+        .red-heart {
+            color: red;
         }
     </style>
 </head>
 <body>
-
     <div class="container">
-        <div id="countdown" class="countdown"></div>
-        
         <div class="slideshow-container">
             <div class="mySlides">
                 <img src="images/foto1.jpg" alt="Foto 1">
@@ -80,20 +75,28 @@
             <div class="mySlides">
                 <img src="images/foto5.jpg" alt="Foto 5">
             </div>
+            <div class="mySlides">
+                <img src="images/foto6.jpg" alt="Foto 6">
+            </div>
+            <div class="mySlides">
+                <img src="images/foto7.jpg" alt="Foto 7">
+            </div>
         </div>
+
+        <div id="countdown" class="countdown"></div>
 
         <div class="text">
             <p>Oi minha gatinhaaa!!</p>
-            <p>♡♡♡♡♡♡♡</p>
+            <p><span class="red-heart">♡♡♡♡♡♡♡</span></p>
             <p>Hoje é o dia mais especial de todos em que a pessoa mais incrível de todas veio ao mundo. Desde que você apareceu, minha vida ganhou cor e alegria. Seu sorriso ilumina meus dias e seu amor me completa e me faz ser o homem mais feliz do mundo.</p>
-            <p>♡♡♡♡♡♡♡</p>
+            <p><span class="red-heart">♡♡♡♡♡♡♡</span></p>
             <p>Cada momento com você é um presente. Sua forma de cuidar de mim e me apoiar é uma prova do nosso amor imenso. Sou grato por cada instante juntos e por todas as nossas memórias.</p>
-            <p>♡♡♡♡♡♡♡</p>
+            <p><span class="red-heart">♡♡♡♡♡♡♡</span></p>
             <p>Quero que saiba o quanto sou apaixonado por você e o quanto te amo. Você é minha luz, minha inspiração e a razão do meu sorriso diário. Desejo que seu aniversário seja tão maravilhoso quanto você, cheio de alegria, carinho e amor.</p>
-            <p>♡♡♡♡♡♡♡</p>
+            <p><span class="red-heart">♡♡♡♡♡♡♡</span></p>
             <p>Feliz aniversário, minha princesa! Que todos os seus sonhos se realizem e que nossa jornada juntos seja sempre feliz. Amo você mais do que palavras podem expressar.</p>
             <p>Com todo meu amor,<br>Leandro</p>
-            <p>♡♡♡♡♡♡♡</p>
+            <p><span class="red-heart">♡♡♡♡♡♡♡</span></p>
         </div>
     </div>
 
@@ -133,8 +136,8 @@
             countdownElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
         }
 
+        updateCountdown();
         setInterval(updateCountdown, 1000);
     </script>
-
 </body>
 </html>
