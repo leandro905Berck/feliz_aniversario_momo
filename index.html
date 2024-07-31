@@ -24,7 +24,7 @@
             color: #000;
             z-index: 1000; /* Garante que esteja acima do restante do conteúdo */
         }
-        .countdown-message {
+        h1 {
             font-size: 80px; /* Tamanho grande da fonte */
             font-family: 'Comic Sans MS', cursive, sans-serif; /* Fonte mais bonita */
             color: #d9534f; /* Cor vermelha */
@@ -75,7 +75,7 @@
 
     <div class="container">
         <div id="countdown" class="countdown"></div>
-
+            <h1>Feliz Aniversário meu amor!!</h1>
         <div class="slideshow-container">
             <div class="mySlides">
                 <img src="images/foto1.jpg" alt="Foto 1">
@@ -148,7 +148,6 @@
                 countdownElement.style.display = "none"; // Esconde a contagem regressiva
                 countdownScreen.style.display = "none"; // Esconde a tela de contagem regressiva
                 document.querySelector('.container').style.display = "block"; // Mostra o conteúdo do site
-                countdownMessageElement.innerHTML = "Feliz Aniversário meu amor!!";
                 audioElement.play(); // Toca a música
                 return;
             }
